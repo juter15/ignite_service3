@@ -1,0 +1,29 @@
+package com.example.ignite_service;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+@RequiredArgsConstructor
+@Slf4j
+public class UserController {
+    public final UserService userService;
+
+    @PostMapping("/get")
+    public ResponseEntity getUser() {
+
+
+        return ResponseEntity.status(HttpStatus.OK).body(userService.getUser());
+    }
+
+    @PostMapping("/insert")
+    public ResponseEntity insertUser(@RequestBody UserModel userModel){
+        return ResponseEntity.status(HttpStatus.OK).body(userService.insertUser(userModel));
+    }
+}
