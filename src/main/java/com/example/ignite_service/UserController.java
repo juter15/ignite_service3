@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequiredArgsConstructor
@@ -17,13 +16,20 @@ public class UserController {
 
     @PostMapping("/get")
     public ResponseEntity getUser() {
-
+        log.info("User get");
 
         return ResponseEntity.status(HttpStatus.OK).body(userService.getUser());
     }
 
     @PostMapping("/insert")
     public ResponseEntity insertUser(@RequestBody UserModel userModel){
+        log.info("User Insert");
         return ResponseEntity.status(HttpStatus.OK).body(userService.insertUser(userModel));
+    }
+    @PostMapping("/delete")
+    public ResponseEntity deleteUser(@RequestBody UserModel userModel){
+        log.info("User Delete");
+        userService.deleteUser(userModel);
+        return ResponseEntity.ok(null);
     }
 }

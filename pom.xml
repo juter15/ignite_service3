@@ -71,6 +71,13 @@
             <artifactId>ignite-indexing</artifactId>
             <version>${ignite.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.ignite/ignite-rest-http -->
+        <dependency>
+            <groupId>org.apache.ignite</groupId>
+            <artifactId>ignite-rest-http</artifactId>
+            <version>${ignite.version}</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.apache.ignite/ignite-spring-data -->
 <!--        <dependency>-->

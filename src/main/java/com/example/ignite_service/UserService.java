@@ -35,4 +35,12 @@ public class UserService {
         }
       return userList;
     }
+
+    public void deleteUser(UserModel userModel){
+        userRepository.deleteById(userModel.getId());
+    }
+
+    public void user(UserModel userModel){
+
+    }
 }
