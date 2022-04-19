@@ -1,15 +1,14 @@
-package com.example.ignite_service.toy;
+package com.example.ignite_service;
 
 import lombok.Data;
 import org.apache.ignite.cache.query.annotations.QuerySqlField;
 
 import java.io.Serializable;
 
-@Deprecated
 @Data
-public class ToyModel implements Serializable {
+public class UserCache implements Serializable {
     @QuerySqlField(index = true)
-    private String toy_id;
+    private Long id;
     @QuerySqlField(index = true)
-    private String toy_name;
+    private String name;
 }

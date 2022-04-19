@@ -22,12 +22,12 @@ public class UserController {
     }
 
     @PostMapping("/insert")
-    public ResponseEntity insertUser(@RequestBody UserModel userModel){
+    public ResponseEntity insertUser(@RequestBody UserCache userModel){
         log.info("User Insert");
         return ResponseEntity.status(HttpStatus.OK).body(userService.insertUser(userModel));
     }
     @PostMapping("/delete")
-    public ResponseEntity deleteUser(@RequestBody UserModel userModel){
+    public ResponseEntity deleteUser(@RequestBody UserCache userModel){
         log.info("User Delete");
         userService.deleteUser(userModel);
         return ResponseEntity.ok(null);

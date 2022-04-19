@@ -13,9 +13,9 @@ import java.util.List;
 public class TestService {
     private final TestRepository testRepository;
 
-    public List<TestModel> getTest(){
-        Iterable<TestModel> getTest = testRepository.findAll();
-        List<TestModel> testList = new ArrayList<>();
+    public List<TestCache> getTest(){
+        Iterable<TestCache> getTest = testRepository.findAll();
+        List<TestCache> testList = new ArrayList<>();
 
         while (getTest.iterator().hasNext()){
             testList.add(getTest.iterator().next());
